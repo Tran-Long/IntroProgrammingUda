@@ -14,11 +14,17 @@ in this game"""
 
 class Player:
     def move(self):
-        return 'rock'
+        pass
 
     def learn(self, my_move, their_move):
         pass
 
+class RockPlayer(Player):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def move(self):
+        return 'rock'
 
 class RandomPlayer(Player):
     def __init__(self) -> None:
@@ -91,9 +97,6 @@ class Game:
             self.score[0] += 1
         elif beats(move2, move1):
             self.score[1] += 1
-        else:
-            self.score[0] += 1
-            self.score[1] += 1
         self.p1.learn(move1, move2)
         self.p2.learn(move2, move1)
         print(f"Score: Player 1 {self.score[0]} - {self.score[1]} Player 2")
@@ -109,7 +112,7 @@ class Game:
         self.announce_winner()
 
     def check_game_done(self):
-        return abs(self.score[0]-self.score[1]) == 3
+        return self.score[0] == 3 or self.score[1] == 3
 
     def announce_winner(self):
         winner_score = max(self.score)

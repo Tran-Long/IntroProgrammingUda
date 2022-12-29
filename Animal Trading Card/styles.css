@@ -1,0 +1,38 @@
+/* add your CSS here */
+.favorit_fact {
+  font-style: italic;
+}
+
+img.resize {
+    width: 300px; /* you can use % */
+    height: auto;
+}
+
+img {  
+max-width: 100%;  
+height: auto;  
+border-style: double;
+}  
+  
+ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+span {
+  font-weight: bold;
+  
+}
+
+div {
+  width: 300px;
+  border-width: 0.5px;
+  border-style: ridge;
+  border-color: brown;
+  padding: 10px;
+}
+
+#fact {
+  width: 280px;
+  padding: 10px;
+}
